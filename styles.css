@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-sans-serif, system-ui, sans-serif;
+  --background: hsl(38, 38%, 96.5%);
+  --foreground: hsl(140, 4.4%, 18%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(140, 4.4%, 18%);
+  --primary: hsl(134, 19%, 30%);
+  --primary-foreground: hsl(38, 38%, 96.5%);
+  --secondary: hsl(35, 29%, 88.6%);
+  --secondary-foreground: hsl(140, 4.4%, 18%);
+  --muted: hsl(36, 33%, 91.2%);
+  --muted-foreground: hsl(135, 3.8%, 42.4%);
+  --accent: hsl(22, 33.3%, 86.1%);
+  --accent-foreground: hsl(140, 4.4%, 18%);
+  --destructive: hsl(3.5, 48.7%, 49.6%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(37, 18.2%, 86.1%);
+  --input: hsl(38, 17.5%, 81.4%);
+  --ring: hsl(136, 17.6%, 35.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(140, 4.4%, 18%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(132, 10.3%, 9.6%);
+  --foreground: hsl(35, 23.5%, 90.6%);
+  --card: hsl(132, 8.8%, 12.7%);
+  --card-foreground: hsl(35, 23.5%, 90.6%);
+  --primary: hsl(134, 15.6%, 55.5%);
+  --primary-foreground: hsl(132, 11.1%, 7.1%);
+  --secondary: hsl(135, 8.1%, 17.5%);
+  --secondary-foreground: hsl(35, 23.5%, 90.6%);
+  --muted: hsl(135, 10%, 15.7%);
+  --muted-foreground: hsl(136, 5.7%, 63.7%);
+  --accent: hsl(16, 16%, 19.2%);
+  --accent-foreground: hsl(19, 44%, 88.2%);
+  --destructive: hsl(4.3, 54.7%, 59%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(137, 10.5%, 19.4%);
+  --input: hsl(136, 10.7%, 22.4%);
+  --ring: hsl(134, 15.6%, 55.5%);
+  --popover: hsl(132, 8.8%, 12.7%);
+  --popover-foreground: hsl(35, 23.5%, 90.6%);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
